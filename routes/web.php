@@ -2,11 +2,12 @@
 
 use Illuminate\Support\Facades\Auth;
 
+// Route::get('/', [PosDeviceController::class, 'homeIndex'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Auth::routes(['register' => true]); //registeration turnedon
 Route::group(['middleware'=>["auth"]], function (){
 
-Route::get('/', [PosDeviceController::class, 'homeIndex'])->name('home');
 
 // Route::get('/', [PosDeviceController::class, 'homeIndex']);
 
